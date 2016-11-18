@@ -64,15 +64,20 @@ public class BezierCurve : MonoBehaviour {
         points = new Vector3[]
         {
             new Vector3(0f, 0f, 0f),
-            new Vector3(0f, 1f, 0f),
-            new Vector3(2f, -1f, 0f),
-            new Vector3(2f, 0f, 0f)
+            new Vector3(0f, 2f, 0f),
+            new Vector3(4f, -2f, 0f),
+            new Vector3(4f, 0f, 0f)
         };
 
         modes = new BezierControlPointMode[] {
             BezierControlPointMode.Free,
             BezierControlPointMode.Free
         };
+    }
+
+    private void Start()
+    {
+
     }
 
     public Vector3 GetPoint(float t)
@@ -84,12 +89,12 @@ public class BezierCurve : MonoBehaviour {
     {
         Vector3 point = points[points.Length - 1];
         Array.Resize(ref points, points.Length + 3);
-        point.y += 1f;
+        point.y += 2f;
         points[points.Length - 3] = point;
-        point.x += 2f;
-        point.y -= 2f;
+        point.x += 4f;
+        point.y -= 4f;
         points[points.Length - 2] = point;
-        point.y += 1f;
+        point.y += 2f;
         points[points.Length - 1] = point;
 
         Array.Resize(ref modes, modes.Length + 1);

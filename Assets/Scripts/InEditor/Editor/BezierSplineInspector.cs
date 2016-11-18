@@ -3,7 +3,7 @@ using UnityEditor;
 using System.Collections;
 
 [CustomEditor(typeof(BezierCurve))]
-public class BezierCurveInspector : Editor
+public class BezierSplineInspector : Editor
 {
 
     private BezierCurve curve;
@@ -38,6 +38,8 @@ public class BezierCurveInspector : Editor
             Handles.DrawBezier(p0, p3, p1, p2, Color.white, null, 4f);
             p0 = p3;
         }
+
+        
     }
 
     public override void OnInspectorGUI()
