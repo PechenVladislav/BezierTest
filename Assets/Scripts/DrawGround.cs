@@ -5,7 +5,7 @@ using System.Collections;
 public class DrawGround : MonoBehaviour {
 
     private BezierCurve editorCurve;
-    private int segmentsPerCurve = 50;
+    private int segmentsPerCurve = 20;
     private LineRenderer lineRenderer;
     private EdgeCollider2D edgeCollider;
     private Vector3[] curveSegments;

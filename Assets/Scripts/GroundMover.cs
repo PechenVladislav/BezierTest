@@ -39,6 +39,9 @@ public class GroundMover : MonoBehaviour
             float segmentLenth = Vector3.Distance(Ground.GetSegmentPoint(i - 1), Ground.GetSegmentPoint(i));
             float completeLength = Vector3.Distance(transform.position, Ground.GetSegmentPoint(i - 1));
             t = (1f / segmentLenth * completeLength);
+            t = Mathf.Clamp01(t);
+            Debug.Log(t);
+
             if (t >= 1)
             {
                 Vector2 segmentVector = Ground.GetSegmentPoint(i) - Ground.GetSegmentPoint(i - 1);
