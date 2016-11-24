@@ -39,9 +39,6 @@ public class GroundMover : MonoBehaviour
             float segmentLenth = Vector3.Distance(Ground.GetSegmentPoint(i - 1), Ground.GetSegmentPoint(i));
             float completeLength = Vector3.Distance(transform.position, Ground.GetSegmentPoint(i - 1));
             t = (1f / segmentLenth * completeLength);
-            t = Mathf.Clamp01(t);
-            Debug.Log(t);
-
             if (t >= 1)
             {
                 Vector2 segmentVector = Ground.GetSegmentPoint(i) - Ground.GetSegmentPoint(i - 1);
@@ -51,7 +48,7 @@ public class GroundMover : MonoBehaviour
 
                 segmentVector = Ground.GetSegmentPoint(i) - Ground.GetSegmentPoint(i - 1);
                 transformUp = new Vector2(-segmentVector.y, segmentVector.x) / segmentLenth;
-                t = 0;
+                t = t - 1f;
             }
             return Vector3.Lerp(transformUpTemp, transformUp, t);
         }

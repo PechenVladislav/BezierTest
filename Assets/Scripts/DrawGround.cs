@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(LineRenderer), typeof(EdgeCollider2D))]
 public class DrawGround : MonoBehaviour {
 
+    public DrawBackground DrawBG;
     private BezierCurve editorCurve;
     private int segmentsPerCurve = 20;
     private LineRenderer lineRenderer;
@@ -33,6 +34,7 @@ public class DrawGround : MonoBehaviour {
         lineRenderer.SetPositions(curveSegments);
         
         edgeCollider.points = V3ToV2(curveSegments);
+        DrawBG.DrawBG();
     }
 
     public Vector3 GetSegmentPoint(int index)

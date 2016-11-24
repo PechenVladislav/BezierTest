@@ -55,6 +55,12 @@ public class BezierSplineInspector : Editor
             curve.AddCurve();
             EditorUtility.SetDirty(curve);
         }
+        if (GUILayout.Button("Remove From Spline"))
+        {
+            Undo.RecordObject(curve, "Remove Curve");
+            curve.RemoveCurve();
+            EditorUtility.SetDirty(curve);
+        }
     }
 
     private void DrawSelectedPointInspector()

@@ -63,21 +63,16 @@ public class BezierCurve : MonoBehaviour {
     {
         points = new Vector3[]
         {
-            new Vector3(0f, 0f, 0f),
-            new Vector3(0f, 2f, 0f),
-            new Vector3(4f, -2f, 0f),
-            new Vector3(4f, 0f, 0f)
+            new Vector3(-5f, 0f, 0f),
+            new Vector3(-5f, 5f, 0f),
+            new Vector3(5f, -5f, 0f),
+            new Vector3(5f, 0f, 0f)
         };
 
         modes = new BezierControlPointMode[] {
             BezierControlPointMode.Free,
             BezierControlPointMode.Free
         };
-    }
-
-    private void Start()
-    {
-
     }
 
     public Vector3 GetPoint(float t)
@@ -89,17 +84,27 @@ public class BezierCurve : MonoBehaviour {
     {
         Vector3 point = points[points.Length - 1];
         Array.Resize(ref points, points.Length + 3);
-        point.y += 2f;
+        point.y += 5f;
         points[points.Length - 3] = point;
-        point.x += 4f;
-        point.y -= 4f;
+        point.x += 10f;
+        point.y -= 10f;
         points[points.Length - 2] = point;
-        point.y += 2f;
+        point.y += 5f;
         points[points.Length - 1] = point;
 
         Array.Resize(ref modes, modes.Length + 1);
         modes[modes.Length - 1] = modes[modes.Length - 2];
         EnforceMode(points.Length - 4);
+    }
+
+    public void RemoveCurve()
+    {
+        if(points.Length > 4)
+        {
+            Array.Resize(ref points, points.Length - 3);
+            Array.Resize(ref modes, modes.Length - 1);
+            EnforceMode(points.Length - 4);
+        }
     }
 
     private void EnforceMode(int index)
