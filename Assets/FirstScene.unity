@@ -458,11 +458,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {x: 0, y: 2, z: 0}
-  - {x: 5.2791743, y: 13.919796, z: 0}
-  - {x: 16.25913, y: 10.939846, z: 0}
-  - {x: 29.312073, y: 17, z: 0}
-  - {x: 48.84319, y: 4.332135, z: 0}
+  - {x: -31.3717, y: 6.924623, z: 0}
+  - {x: 6.3735375, y: 7.9008036, z: 0}
+  - {x: 29.573866, y: 10.392671, z: 0}
+  - {x: 50.104935, y: 27.214039, z: 0}
+  - {x: 68.17691, y: 38.257347, z: 0}
+  - {x: 94.903145, y: 43.78331, z: 0}
+  - {x: 105.39641, y: 25.71003, z: 0}
 --- !u!4 &1126107233
 Transform:
   m_ObjectHideFlags: 0
@@ -488,8 +490,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 112638, guid: 510618c097881304bb7cf0c40dcb19cd, type: 2}
-  speed: 4
-  delay: 1.5
+  speed: 8
+  delay: 0.5
 --- !u!1 &1403182942
 GameObject:
   m_ObjectHideFlags: 0
